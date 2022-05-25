@@ -1,9 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import HomeView from '../views/HomeView.vue';
+
+
 import Categories from '../views/Categories.vue';
 import CategorieEdit from '../components/Categories/CategorieEdit.vue';
 import NewCategorie from '../components/Categories/NewCategorie.vue';
+
+import Clients from '../views/Clients.vue';
+import NewClient from '../components/Clients/NewClient.vue';
+import EditClient from '../components/Clients/EditClient.vue';
+
+
 const routes = [
   {
     path: '/',
@@ -32,7 +40,24 @@ const routes = [
     path: '/add-Categorie/',
     name: 'NewCategorie',
     component: NewCategorie
-  }
+  },
+  {
+    path: '/clients',
+    name: 'Clients',
+    component: Clients
+  },
+  {
+    path: '/add-Client/',
+    name: 'NewClient',
+    component: NewClient
+  },
+
+  {
+    path: '/client-edit/:id',
+    name: 'EditClient',
+    component: EditClient
+  },
+ 
 ]
 
 const router = createRouter({

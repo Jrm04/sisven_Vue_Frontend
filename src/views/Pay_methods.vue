@@ -1,7 +1,7 @@
 <template>
-<div class="container" id="Categorie">
-    <h1>Categories List |
-    <button @click="newCategorie()" class="btn btn-success mx-2">
+<div class="container" id="Pay_methods">
+    <h1>Pay Methods List |
+    <button @click="newPay_method()" class="btn btn-success mx-2">
     <font-awesome-icon icon="plus" />
     </button>
     </h1>
@@ -10,20 +10,20 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Name</th>
-                <th scope="col">Description</th>
+                <th scope="col">Other Details</th>
             </tr>
         </thead>
         <tbody>
-            <tr v-for="categorie in categories">
-                <th scope="row"> {{ categorie.id }}</th>
-                <td>{{ categorie.name }}</td>
-                <td>{{ categorie.description }}</td>
+            <tr v-for="pm in pay_methods">
+                <th scope="row"> {{ pm.id }}</th>
+                <td>{{ pm.name }}</td>
+                <td>{{ pm.other_details }}</td>
                 <td>
-                    <button @click="deleteCategorie(categorie.id)"
+                    <button @click="deletePay_method(pm.id)"
                         class="btn btn-danger mx-2">
                         <font-awesome-icon icon="trash" />
                     </button>
-                    <button @click="editCategorie(categorie.id)"
+                    <button @click="editPay_method(pm.id)"
                         class="btn btn-warning mx-2">
                         <font-awesome-icon icon="pencil" />
                     </button>
@@ -40,42 +40,42 @@ import Swal from "sweetalert2";
 
 export default{
 
-    name: 'Categorie',
+    name: 'Pay_method',
     data(){
         return{
-            categories: []
+            pay_methods: []
         }
     },
     methods:{
-        deleteCategorie(id){
+        deletePay_method(id){
             Swal.fire({
                 position: 'top-center',
-                title: `Do you want to delete the Categorie whith id ${id} ?` ,
+                title: `Do you want to delete the Pay Method whith id ${id} ?` ,
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Delete',
                 }).then((result)=>{
                     if(result.isConfirmed) {
-                        axios.delete(`http://127.0.0.1:8000/api/categories/${id}`)
+                        axios.delete(`http://127.0.0.1:8000/api/paymethod/${id}`)
                         .then(response => {
                             if(response.data.success){
                                 Swal.fire('Delete!! ', '', 'success')
-                                this.categories = response.data.categories
+                                this.pay_methods = response.data.pay_methods
                             }
                         })
                     }
                 })
         },
-        editCategorie(id){
-            this.$router.push({name: 'CategorieEdit', params: { id: `${id}`}})
+        editPay_method(id){
+            this.$router.push({name: 'EditPay_method', params: { id: `${id}`}})
         },
-        newCategorie(){
-            this.$router.push({name: 'NewCategorie'});
+        newPay_method(){
+            this.$router.push({name: 'NewPay_method'});
         }
 
     },
     mounted() {
-        axios.get('http://127.0.0.1:8000/api/categories').then(response => (this.categories = response.data.categories));
+        axios.get('http://127.0.0.1:8000/api/paymethod').then(response => (this.pay_methods = response.data.pay_methods));
     },
 
 }
