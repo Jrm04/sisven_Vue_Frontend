@@ -74,7 +74,7 @@ export default{
             if(res.status == 200){
                 this.$router.push({name: 'Categories'})
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'top-center',
                     icon: 'success',
                     tittle: 'Categories has been saved',
                     showConfirmButton: false,

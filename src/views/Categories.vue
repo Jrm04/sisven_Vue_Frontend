@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import axios from 'axios'
-import swal from 'vue-sweetalert2'
+import axios from "axios";
+import Swal from "sweetalert2";
 
 export default{
 
@@ -48,8 +48,10 @@ export default{
     },
     methods:{
         deleteCategorie(id){
-            swal.fire({
-                title: `Do you want to delete the Categorie whith id ${id}?`,
+            Swal.fire({
+                position: 'top-center',
+                title: `Do you want to delete the Categorie whith id ${id} ?` ,
+                type: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Delete',
                 }).then((result)=>{
@@ -57,7 +59,7 @@ export default{
                         axios.delete(`http://127.0.0.1:8000/api/categories/${id}`)
                         .then(response => {
                             if(response.data.success){
-                                swal.fire('Delete!! ', '', 'success')
+                                Swal.fire('Delete!! ', '', 'success')
                                 this.categories = response.data.categories
                             }
                         })
