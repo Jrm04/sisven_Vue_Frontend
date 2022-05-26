@@ -11,6 +11,10 @@ import Clients from '../views/Clients.vue';
 import NewClient from '../components/Clients/NewClient.vue';
 import EditClient from '../components/Clients/EditClient.vue';
 
+import Pay_methods from '../views/Pay_methods.vue';
+import NewPay_method from '../components/Pay_methods/NewPay_method.vue';
+import EditPay_method from '../components/Pay_methods/EditPay_method.vue';
+
 
 const routes = [
   {
@@ -57,6 +61,21 @@ const routes = [
     name: 'EditClient',
     component: EditClient
   },
+  {
+    path: '/paymethods',
+    name: 'Pay_methods',
+    component: Pay_methods
+  },
+  {
+    path: '/add-Pay_method/',
+    name: 'NewPay_method',
+    component: NewPay_method
+  },
+  {
+    path: '/pay_method-edit/:id',
+    name: 'EditPay_method',
+    component: EditPay_method
+  }
  
 ]
 

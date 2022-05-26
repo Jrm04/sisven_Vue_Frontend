@@ -3,37 +3,37 @@
     <h1 class="text-primary fw-bold">New</h1>
     <div class="card">
         <div class="card-header fw-bold">
-            Categorie
+            Pay Methods
         </div>
         <div class="card-body">
-            <form @submit.prevent="saveCategorie">
+            <form @submit.prevent="savePay_method">
             <div class="row mb-3">
 
-                <label for="id" class="form-label">Categorie Id: </label>
+                <label for="id" class="form-label">Pay Methods Id: </label>
                 <div class="input-group">
                     <div class="input-group-text"> <font-awesome-icon icon="tag" /></div>
-                    <input type="text" class="form-control" id="id" placeholder="Categorie Id"
-                          v-model="categorie.id" 
+                    <input type="text" class="form-control" id="id" placeholder="Pay Methods Id"
+                          v-model="pm.id" 
                           >
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label for="name" class="form-label">Categorie Name: </label>
+                <label for="name" class="form-label">Pay Methods Name: </label>
                 <div class="input-group">
                     <div class="input-group-text"> <font-awesome-icon icon="building" /></div>
-                    <input type="text" class="form-control" id="name" placeholder="Categorie Name"
-                         v-model="categorie.name"
+                    <input type="text" class="form-control" id="name" placeholder="Pay Methods Name"
+                         v-model="pm.name"
                     >
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label for="description" class="form-label">Categorie Description: </label>
+                <label for="other_details" class="form-label">Pay Methods Other Details: </label>
                 <div class="input-group">
                     <div class="input-group-text"> <font-awesome-icon icon="bank" /></div>
-                    <input type="text" class="form-control" id="description" placeholder="Categorie Description"
-                         v-model="categorie.description"
+                    <input type="text" class="form-control" id="other_details" placeholder="Pay Methods Other Details:"
+                         v-model="pm.other_details"
                     >
                 </div>
             </div>
@@ -51,28 +51,28 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 export default{
-    name: 'CategorieEdit',
+    name: 'EditPay_method',
     data(){
         return{
-            categorie:{
+            pm:{
                 id:0,
                 name:'',
-                description:''
+                other_details:''
             },
-            categories: []
+            pay_methods: []
         }
     },
     methods: {
         cancel(){
-            this.$router.push({name: 'Categories'})
+            this.$router.push({name: 'Pay_methods'})
         },
 
-        async saveCategorie(){
-            this.categorie.id = this.id
-            const res = await axios.post(`http://127.0.0.1:8000/api/categories/`, this.categorie)
+        async savePay_method(){
+            this.pm.id = this.id
+            const res = await axios.post(`http://127.0.0.1:8000/api/paymethod/`, this.pm)
             console.log(res);
             if(res.status == 200){
-                this.$router.push({name: 'Categories'})
+                this.$router.push({name: 'Pay_methods'})
                 Swal.fire({
                     position: 'top-center',
                     icon: 'success',
@@ -85,8 +85,8 @@ export default{
     },
 
     mounted(){
-        axios.get(`http://127.0.0.1:8000/api/categories/`).then(response => {
-            this.categories = response.data.categories
+        axios.get(`http://127.0.0.1:8000/api/paymethod/`).then(response => {
+            this.pay_methods = response.data.pay_methods
         })
     },
 }
