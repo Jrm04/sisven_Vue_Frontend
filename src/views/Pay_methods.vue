@@ -14,16 +14,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="pm in pay_methods">
-                <th scope="row"> {{ pm.id }}</th>
-                <td>{{ pm.name }}</td>
-                <td>{{ pm.other_details }}</td>
+            <tr v-for="pay_method in pay_methods">
+                <th scope="row"> {{ pay_method.id }}</th>
+                <td>{{ pay_method.name }}</td>
+                <td>{{ pay_method.other_details }}</td>
                 <td>
-                    <button @click="deletePay_method(pm.id)"
+                    <button @click="deletePay_method(pay_method.id)"
                         class="btn btn-danger mx-2">
                         <font-awesome-icon icon="trash" />
                     </button>
-                    <button @click="editPay_method(pm.id)"
+                    <button @click="editPay_method(pay_method.id)"
                         class="btn btn-warning mx-2">
                         <font-awesome-icon icon="pencil" />
                     </button>

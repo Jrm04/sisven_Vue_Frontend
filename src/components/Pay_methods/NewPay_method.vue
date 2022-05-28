@@ -13,7 +13,7 @@
                 <div class="input-group">
                     <div class="input-group-text"> <font-awesome-icon icon="tag" /></div>
                     <input type="text" class="form-control" id="id" placeholder="Pay Methods Id"
-                          v-model="pm.id" 
+                          v-model="pay_method.id" 
                           >
                 </div>
             </div>
@@ -23,7 +23,7 @@
                 <div class="input-group">
                     <div class="input-group-text"> <font-awesome-icon icon="building" /></div>
                     <input type="text" class="form-control" id="name" placeholder="Pay Methods Name"
-                         v-model="pm.name"
+                         v-model="pay_method.name"
                     >
                 </div>
             </div>
@@ -33,7 +33,7 @@
                 <div class="input-group">
                     <div class="input-group-text"> <font-awesome-icon icon="bank" /></div>
                     <input type="text" class="form-control" id="other_details" placeholder="Pay Methods Other Details:"
-                         v-model="pm.other_details"
+                         v-model="pay_method.other_details"
                     >
                 </div>
             </div>
@@ -54,7 +54,7 @@ export default{
     name: 'EditPay_method',
     data(){
         return{
-            pm:{
+            pay_method:{
                 id:0,
                 name:'',
                 other_details:''
@@ -68,8 +68,8 @@ export default{
         },
 
         async savePay_method(){
-            this.pm.id = this.id
-            const res = await axios.post(`http://127.0.0.1:8000/api/paymethod/`, this.pm)
+            this.pay_method.id = this.id
+            const res = await axios.post(`http://127.0.0.1:8000/api/paymethod/`, this.pay_method)
             console.log(res);
             if(res.status == 200){
                 this.$router.push({name: 'Pay_methods'})

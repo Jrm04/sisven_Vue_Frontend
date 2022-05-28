@@ -16,7 +16,7 @@
                             <font-awesome-icon icon="tag" />
                         </div>
                         <input type="text" class="form-control" id="id" placeholder="Pay Method Id" disabled
-                            v-model="pm.id">
+                            v-model="pay_method.id">
                     </div>
                 </div>
 
@@ -28,7 +28,7 @@
                             <font-awesome-icon icon="building" />
                         </div>
                         <input type="text" class="form-control" id="name" placeholder="Pay Method Name"
-                            v-model="pm.name">
+                            v-model="pay_method.name">
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                             <font-awesome-icon icon="bank" />
                         </div>
                         <input type="text" class="form-control" id="other_details" placeholder="Pay Method Other Details"
-                            v-model="pm.other_details">
+                            v-model="pay_method.other_details">
                     </div>
                 </div>
                 <button class="btn btn-primary" type="submit">Update</button>
@@ -58,7 +58,7 @@ export default {
     name: 'EditPay_method',
     data() {
         return {
-            pm: {
+            pay_method: {
                 id: 0,
                 name: '',
                 other_details: ''
@@ -73,7 +73,7 @@ export default {
 
         async updatePay_method() {
 
-            const res = await axios.put(`http://127.0.0.1:8000/api/paymethod/${this.pm.id}`, this.pm)
+            const res = await axios.put(`http://127.0.0.1:8000/api/paymethod/${this.pay_method.id}`, this.pay_method)
             if (res.status == 200) {
                 this.$router.push({ name: 'Pay_methods' })
                 Swal.fire({
@@ -88,9 +88,9 @@ export default {
     },
 
     mounted() {
-        this.pm.id = this.$route.params.id;
-        axios.get(`http://127.0.0.1:8000/api/paymethod/${this.pm.id}`).then(response => {
-            this.pm = response.data.pm;
+        this.pay_method.id = this.$route.params.id;
+        axios.get(`http://127.0.0.1:8000/api/paymethod/${this.pay_method.id}`).then(response => {
+            this.pay_method = response.data.pay_method;
             this.pay_methods = response.data.pay_methods
         })
     },
