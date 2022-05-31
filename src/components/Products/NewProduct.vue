@@ -31,7 +31,7 @@
             <div class="row mb-3">
                 <label for="description" class="form-label">Product Price: </label>
                 <div class="input-group">
-                    <div class="input-group-text"> <font-awesome-icon icon="bank" /></div>
+                    <div class="input-group-text"> <font-awesome-icon icon="circledollar" /></div>
                     <input type="text" class="form-control" id="price" placeholder="Product Price"
                          v-model="product.price"
                     >
@@ -41,7 +41,7 @@
             <div class="row mb-3">
                 <label for="description" class="form-label">Product Stock: </label>
                 <div class="input-group">
-                    <div class="input-group-text"> <font-awesome-icon icon="bank" /></div>
+                    <div class="input-group-text"> <font-awesome-icon icon="check" /></div>
                     <input type="text" class="form-control" id="stock" placeholder="Product Stock"
                          v-model="product.stock"
                     >
@@ -66,6 +66,7 @@
 </template>
 
 
+
 <script>
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -81,8 +82,8 @@ export default{
                 stock: 0,
                 id_categorie: 0
             },
-            categories: [],
-            id: "0"
+            products: [],
+            
         }
     },
     methods: {
@@ -108,8 +109,8 @@ export default{
     },
 
     mounted(){
-        axios.get(`http://127.0.0.1:8000/api/categories/`).then(response => {
-            this.categories = response.data.categories
+        axios.get(`http://127.0.0.1:8000/api/products/`).then(response => {
+            this.products = response.data.products
         })
     },
 }

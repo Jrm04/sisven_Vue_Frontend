@@ -21,7 +21,7 @@
             <div class="row mb-3">
                 <label for="name" class="form-label">Pay Methods Name: </label>
                 <div class="input-group">
-                    <div class="input-group-text"> <font-awesome-icon icon="building" /></div>
+                    <div class="input-group-text"> <font-awesome-icon icon="credit-card" /></div>
                     <input type="text" class="form-control" id="name" placeholder="Pay Methods Name"
                          v-model="pay_method.name"
                     >
@@ -31,7 +31,7 @@
             <div class="row mb-3">
                 <label for="other_details" class="form-label">Pay Methods Other Details: </label>
                 <div class="input-group">
-                    <div class="input-group-text"> <font-awesome-icon icon="bank" /></div>
+                    <div class="input-group-text"> <font-awesome-icon icon="align-justify" /></div>
                     <input type="text" class="form-control" id="other_details" placeholder="Pay Methods Other Details:"
                          v-model="pay_method.other_details"
                     >

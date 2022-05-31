@@ -21,7 +21,7 @@
             <div class="row mb-3">
                 <label for="name" class="form-label">Categorie Name: </label>
                 <div class="input-group">
-                    <div class="input-group-text"> <font-awesome-icon icon="building" /></div>
+                    <div class="input-group-text"> <font-awesome-icon icon="bookmark" /></div>
                     <input type="text" class="form-control" id="name" placeholder="Categorie Name"
                          v-model="categorie.name"
                     >
@@ -31,7 +31,7 @@
             <div class="row mb-3">
                 <label for="description" class="form-label">Categorie Description: </label>
                 <div class="input-group">
-                    <div class="input-group-text"> <font-awesome-icon icon="bank" /></div>
+                    <div class="input-group-text"> <font-awesome-icon icon="align-justify" /></div>
                     <input type="text" class="form-control" id="description" placeholder="Categorie Description"
                          v-model="categorie.description"
                     >

@@ -2,7 +2,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBank, faBuilding, faPencil, faPhone, faPlus, faTag, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faBank, faBuilding, faPencil, faPhone, faPlus, faTag, faTrash, faUser, faHouseChimney, faCalendar, faAt, faCheck, faAlignJustify, faBookmark, faCreditCard } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -18,5 +18,12 @@ library.add(faTag)
 library.add(faBuilding)
 library.add(faBank)
 library.add(faPlus)
+library.add(faHouseChimney)
+library.add(faCalendar)
+library.add(faAt)
+library.add(faCheck)
+library.add(faAlignJustify)
+library.add(faBookmark)
+library.add(faCreditCard)
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).use(router).use(VueAxios, axios).mount('#app')

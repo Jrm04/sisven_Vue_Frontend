@@ -1,27 +1,28 @@
 <template>
 <div class="container" id="Categorie">
     <h1>Products List |
-    <button @click="newProduct()" class="btn btn-success mx-2">
+    <button @click="NewProduct()" class="btn btn-success mx-2">
     <font-awesome-icon icon="plus" />
     </button>
     </h1>
-    <table class="table">
-        <thead>
+    <table class="table table-hover ">
+        <thead >
             <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Categorie</th>
+                <th class="table-warning" scope="col">Id</th>
+                <th class="table-warning" scope="col">Name</th>
+                <th class="table-warning" scope="col">Price</th>
+                <th class="table-warning" scope="col">Stock</th>
+                <th class="table-info"    scope="col">Categorie</th>
+                <th class="table-warning"></th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="product in products">
-                <th scope="row"> {{ product.id }}</th>
+                <th class="table-warning" scope="row"> {{ product.id }}</th>
                 <td>{{ product.name }}</td>
                 <td>{{ product.price }}</td>
                 <td>{{ product.stock }}</td>
-                <td>{{ product.id_categories }}</td>
+                <td class="table-info">{{ product.id_categories }}</td>
                 <td>
                     <button @click="deleteProduct(product.id)"
                         class="btn btn-danger mx-2">
@@ -73,7 +74,7 @@ export default{
         editProduct(id){
             this.$router.push({name: 'ProductEdit', params: { id: `${id}`}})
         },
-        newProduct(){
+        NewProduct(){
             this.$router.push({name: 'NewProduct'});
         }
 
@@ -86,3 +87,4 @@ export default{
 }
 
 </script>
+

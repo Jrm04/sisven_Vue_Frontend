@@ -23,7 +23,7 @@
                         <label for="name" class="form-label">Client Name: </label>
                         <div class="input-group">
                             <div class="input-group-text">
-                                <font-awesome-icon icon="building" />
+                                <font-awesome-icon icon="user" />
                             </div>
                             <input type="text" class="form-control" id="name" placeholder="Client Name"
                                 v-model="client.name">
@@ -34,7 +34,7 @@
                         <label for="lastname" class="form-label">Client Lastname: </label>
                         <div class="input-group">
                             <div class="input-group-text">
-                                <font-awesome-icon icon="bank" />
+                                <font-awesome-icon icon="user" />
                             </div>
                             <input type="text" class="form-control" id="lastname" placeholder="Client Lastname"
                                 v-model="client.lastname">
@@ -45,7 +45,7 @@
                         <label for="direction" class="form-label">Client Direction: </label>
                         <div class="input-group">
                             <div class="input-group-text">
-                                <font-awesome-icon icon="bank" />
+                                <font-awesome-icon icon="house-chimney" />
                             </div>
                             <input type="text" class="form-control" id="direction" placeholder="Client Direction"
                                 v-model="client.direction">
@@ -56,7 +56,7 @@
                         <label for="birth_date" class="form-label">Client Birth Date: </label>
                         <div class="input-group">
                             <div class="input-group-text">
-                                <font-awesome-icon icon="bank" />
+                                <font-awesome-icon icon="calendar" />
                             </div>
                             <input type="date" class="form-control" id="birth_date"
                                 placeholder="Client Birth Date (AA-MM-DD)" v-model="client.birth_date">
@@ -67,7 +67,7 @@
                         <label for="phone_number" class="form-label">Client Phone Number: </label>
                         <div class="input-group">
                             <div class="input-group-text">
-                                <font-awesome-icon icon="bank" />
+                                <font-awesome-icon icon="phone" />
                             </div>
                             <input type="text" class="form-control" id="phone_number" placeholder="Client Phone Number"
                                 v-model="client.phone_number">
@@ -78,7 +78,7 @@
                         <label for="email" class="form-label">Client Email: </label>
                         <div class="input-group">
                             <div class="input-group-text">
-                                <font-awesome-icon icon="building" />
+                                <font-awesome-icon icon="at" />
                             </div>
                             <input type="text" class="form-control" id="email" placeholder="Client Email"
                                 v-model="client.email">

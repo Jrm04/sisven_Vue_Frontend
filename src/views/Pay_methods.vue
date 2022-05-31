@@ -5,17 +5,18 @@
     <font-awesome-icon icon="plus" />
     </button>
     </h1>
-    <table class="table">
-        <thead>
+    <table class="table table-hover">
+        <thead class="table-success"> 
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Other Details</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="pay_method in pay_methods">
-                <th scope="row"> {{ pay_method.id }}</th>
+                <th class="table-success" scope="row"> {{ pay_method.id }}</th>
                 <td>{{ pay_method.name }}</td>
                 <td>{{ pay_method.other_details }}</td>
                 <td>

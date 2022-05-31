@@ -6,13 +6,13 @@
             Product
         </div>
         <div class="card-body">
-            <form @submit.prevent="saveProduct">
+            <form @submit.prevent="updateProduct">
             <div class="row mb-3">
 
                 <label for="id" class="form-label">Product Id: </label>
                 <div class="input-group">
                     <div class="input-group-text"> <font-awesome-icon icon="tag" /></div>
-                    <input type="text" class="form-control" id="id" placeholder="Product Id"
+                    <input type="text" class="form-control" id="id" placeholder="Product Id" disabled
                           v-model="product.id" 
                           >
                 </div>
@@ -90,16 +90,14 @@ export default{
             this.$router.push({name: 'Products'})
         },
 
-        async saveProduct(){
-            this.Product.id = this.id
-            const res = await axios.post(`http://127.0.0.1:8000/api/products/`, this.Product)
-            console.log(res);
+        async updateProduct(){
+            const res = await axios.post(`http://127.0.0.1:8000/api/products/${this.Product.id}`, this.Product)
             if(res.status == 200){
                 this.$router.push({name: 'Products'})
                 Swal.fire({
                     position: 'top-center',
                     icon: 'success',
-                    tittle: 'Categories has been saved',
+                    tittle: 'Products has been saved',
                     showConfirmButton: false,
                     timer: 2000
                 })
@@ -108,8 +106,9 @@ export default{
     },
 
     mounted(){
-        axios.get(`http://127.0.0.1:8000/api/categories/`).then(response => {
-            this.categories = response.data.categories
+        axios.get(`http://127.0.0.1:8000/api/products/${this.Product.id}`).then(response => {
+            this.categories = response.data.categories;
+            this.Products = response.data.Products 
         })
     },
 }

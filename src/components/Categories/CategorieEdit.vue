@@ -25,7 +25,7 @@
                     <label for="nombre" class="form-label">Categorie Name: </label>
                     <div class="input-group">
                         <div class="input-group-text">
-                            <font-awesome-icon icon="building" />
+                            <font-awesome-icon icon="bookmark" />
                         </div>
                         <input type="text" class="form-control" id="name" placeholder="Categorie Name"
                             v-model="categorie.name">
@@ -37,7 +37,7 @@
                     <label for="description" class="form-label">Categorie Description</label>
                     <div class="input-group">
                         <div class="input-group-text">
-                            <font-awesome-icon icon="bank" />
+                            <font-awesome-icon icon="align-justify" />
                         </div>
                         <input type="text" class="form-control" id="description" placeholder="Cateogrie Description"
                             v-model="categorie.description">

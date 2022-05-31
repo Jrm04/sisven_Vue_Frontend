@@ -96,8 +96,7 @@ const routes = [
     path: '/product-edit/:id',
     name: 'ProductEdit',
     component: ProductEdit
-  }
- 
+  },
 ]
 
 const router = createRouter({

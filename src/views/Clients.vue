@@ -5,8 +5,8 @@
     <font-awesome-icon icon="plus" />
     </button>
     </h1>
-    <table class="table">
-        <thead>
+    <table class="table table-hover">
+        <thead class="table-danger">
             <tr>
                <th scope="col">id</th>
                <th scope="col">Name</th>
@@ -15,11 +15,12 @@
                <th scope="col">Birth Date</th>
                <th scope="col">Phone Number</th>
                <th scope="col">Email</th>
+               <th></th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="client in clients">
-                <th scope="row"> {{ client.id }}</th>
+                <th class="table-danger" scope="row"> {{ client.id }}</th>
                 <td>{{ client.name }}</td>
                 <td>{{ client.lastname }}</td>
                 <td>{{ client.direction }}</td>
