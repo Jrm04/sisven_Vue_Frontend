@@ -15,6 +15,12 @@ import Pay_methods from '../views/Pay_methods.vue';
 import NewPay_method from '../components/Pay_methods/NewPay_method.vue';
 import EditPay_method from '../components/Pay_methods/EditPay_method.vue';
 
+import Products from '../views/Products.vue';
+import NewProduct from '../components/Products/NewProduct.vue';
+import ProductEdit from '../components/Products/ProductEdit.vue';
+
+
+
 
 const routes = [
   {
@@ -75,6 +81,21 @@ const routes = [
     path: '/pay_method-edit/:id',
     name: 'EditPay_method',
     component: EditPay_method
+  },
+  {
+    path: '/products',
+    name: 'Products',
+    component: Products
+  },
+  {
+    path: '/add-Product/',
+    name: 'NewProduct',
+    component: NewProduct
+  },
+  {
+    path: '/product-edit/:id',
+    name: 'ProductEdit',
+    component: ProductEdit
   }
  
 ]
