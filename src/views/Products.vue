@@ -75,6 +75,7 @@ export default{
             this.$router.push({name: 'ProductEdit', params: { id: `${id}`}})
         },
         NewProduct(){
+            console.log("Esty")
             this.$router.push({name: 'NewProduct'});
         }
 

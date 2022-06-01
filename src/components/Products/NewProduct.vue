@@ -49,11 +49,11 @@
             </div>
 
             <div class="row mb-3">
-                <label for="description" class="form-label">Product: </label>
+                <label for="description" class="form-label">Categorie: </label>
                 <div class="input-group">
                     <div class="input-group-text"> <font-awesome-icon icon="bank" /></div>
-                    <select class="form-select" v-model="product.id_categorie">
-                           <option v-for="categorie in cateogires" v-bind:value="categorie.id"> {{ categorie.id }}</option>
+                    <select class="form-select" v-model="product.id_categories">
+                           <option v-for="categorie in categories" v-bind:value="categorie.id"> {{ categorie.name }}</option>
                     </select>
                 </div>
             </div>
@@ -75,14 +75,16 @@ export default{
     name: 'ProductEdit',
     data(){
         return{
-            Product:{
+            product:{
                 id:0,
                 name:'',
                 price: 0,
                 stock: 0,
-                id_categorie: 0
+                id_categories: 0
             },
-            products: [],
+           // products: [],
+            categories: [],
+            id_categorie: "0"
             
         }
     },
@@ -92,8 +94,9 @@ export default{
         },
 
         async saveProduct(){
-            this.Product.id = this.id
-            const res = await axios.post(`http://127.0.0.1:8000/api/products/`, this.Product)
+            //this.product.id_categorie = this.id_categorie
+            console.log(this.product)
+            const res = await axios.post(`http://127.0.0.1:8000/api/products/`, this.product)
             console.log(res);
             if(res.status == 200){
                 this.$router.push({name: 'Products'})
@@ -109,8 +112,10 @@ export default{
     },
 
     mounted(){
-        axios.get(`http://127.0.0.1:8000/api/products/`).then(response => {
-            this.products = response.data.products
+        axios.get(`http://127.0.0.1:8000/api/categories/`).then(response => {
+           // this.products = response.data.products
+            this.categories = response.data.categories
+            console.log(response.data.categories)
         })
     },
 }
