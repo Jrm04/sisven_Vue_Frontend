@@ -12,7 +12,7 @@
                 <label for="id" class="form-label">Product Id: </label>
                 <div class="input-group">
                     <div class="input-group-text"> <font-awesome-icon icon="tag" /></div>
-                    <input type="text" class="form-control" id="id" placeholder="Product Id"
+                    <input type="text" class="form-control" id="id" placeholder="Product Id" disabled
                           v-model="product.id" 
                           >
                 </div>
@@ -21,7 +21,7 @@
             <div class="row mb-3">
                 <label for="name" class="form-label">Product Name: </label>
                 <div class="input-group">
-                    <div class="input-group-text"> <font-awesome-icon icon="building" /></div>
+                    <div class="input-group-text"> <font-awesome-icon icon="box" /></div>
                     <input type="text" class="form-control" id="name" placeholder="Product Name"
                          v-model="product.name"
                     >
@@ -31,7 +31,7 @@
             <div class="row mb-3">
                 <label for="description" class="form-label">Product Price: </label>
                 <div class="input-group">
-                    <div class="input-group-text"> <font-awesome-icon icon="circledollar" /></div>
+                    <div class="input-group-text"> <font-awesome-icon icon="dollar-sign" /></div>
                     <input type="text" class="form-control" id="price" placeholder="Product Price"
                          v-model="product.price"
                     >
@@ -51,7 +51,7 @@
             <div class="row mb-3">
                 <label for="description" class="form-label">Categorie: </label>
                 <div class="input-group">
-                    <div class="input-group-text"> <font-awesome-icon icon="bank" /></div>
+                    <div class="input-group-text"> <font-awesome-icon icon="bookmark" /></div>
                     <select class="form-select" v-model="product.id_categories">
                            <option v-for="categorie in categories" v-bind:value="categorie.id"> {{ categorie.name }}</option>
                     </select>
@@ -82,9 +82,9 @@ export default{
                 stock: 0,
                 id_categories: 0
             },
-           // products: [],
+            //products: [],
             categories: [],
-            id_categorie: "0"
+            
             
         }
     },
@@ -103,7 +103,7 @@ export default{
                 Swal.fire({
                     position: 'top-center',
                     icon: 'success',
-                    tittle: 'Categories has been saved',
+                    title: 'Categories has been saved',
                     showConfirmButton: false,
                     timer: 2000
                 })
